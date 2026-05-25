@@ -5,7 +5,7 @@
     <meta name="google-site-verification" content="zLXkD3HCnlS_8Brjc4aApYmXSFZ2Ik1J6k2dO6zax_c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>✨ Snap Studio - Edisi Idul Adha ✨</title>
+    <title>✨ Eid Studio - Y2K Modern Pro ✨</title>
 
     <meta name="description" content="Gunakan Eid Studio untuk pengalaman photobooth digital yang seru, otomatis, dan gratis langsung dari browser kamu. Abadikan momen lebaranmu sekarang!">
     <meta name="robots" content="index, follow">
@@ -16,8 +16,8 @@
     <!-- Pustaka untuk Generate GIF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gifshot/0.3.2/gifshot.min.js"></script>
     
-    <!-- 20 Font Islami & Elegan -->
-    <link href="https://fonts.googleapis.com/css2?family=Almendra:wght@700&family=Amiri:wght@700&family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&family=Changa:wght@700&family=Cinzel:wght@700&family=Cormorant+Garamond:wght@700&family=El+Messiri:wght@700&family=Katibeh&family=Lalezar&family=Lateef:wght@700&family=Mada:wght@700&family=Marcellus&family=Markazi+Text:wght@700&family=Mirza:wght@700&family=Philosopher:wght@700&family=Rakkas&family=Reem+Kufi:wght@700&family=Tajawal:wght@700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <!-- 20 Font Islami & Elegan + Font Retro Y2K UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:wght@700&family=Amiri:wght@700&family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&family=Changa:wght@700&family=Cinzel:wght@700&family=Cormorant+Garamond:wght@700&family=El+Messiri:wght@700&family=Katibeh&family=Lalezar&family=Lateef:wght@700&family=Mada:wght@700&family=Marcellus&family=Markazi+Text:wght@700&family=Mirza:wght@700&family=Philosopher:wght@700&family=Rakkas&family=Reem+Kufi:wght@700&family=Tajawal:wght@700&family=Tangerine:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Unbounded:wght@900&display=swap" rel="stylesheet">
 
     <script>
@@ -26,30 +26,36 @@
             theme: {
                 extend: {
                     colors: {
-                        eid: {
-                            green: '#047857', gold: '#F59E0B', cream: '#FEF3C7', dark: '#064E3B', darker: '#022C22'
+                        y2k: {
+                            green: '#00FF66',   // Neon Green Modern
+                            darkgreen: '#047857', // Forest/Emerald Green
+                            yellow: '#FFEA00',  // Lemon Yellow Modern
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            lightgray: '#F5F5F7',
+                            darkgray: '#121214'
                         }
                     },
                     boxShadow: {
-                        'eid': '4px 4px 0px 0px rgba(0,0,0,1)',
-                        'eid-hover': '6px 6px 0px 0px rgba(0,0,0,1)',
-                        'eid-dark': '4px 4px 0px 0px #F59E0B',
-                        'eid-dark-hover': '6px 6px 0px 0px #047857',
+                        'brutal': '5px 5px 0px 0px #000000',
+                        'brutal-hover': '2px 2px 0px 0px #000000',
+                        'brutal-green': '5px 5px 0px 0px #00FF66',
+                        'brutal-yellow': '5px 5px 0px 0px #FFEA00',
+                        'window': '8px 8px 0px 0px #000000',
+                        'window-dark': '8px 8px 0px 0px #00FF66'
                     },
                     animation: {
-                        'blob': 'blob 10s infinite alternate cubic-bezier(0.4, 0, 0.2, 1)',
-                        'grid-scroll': 'gridScroll 20s linear infinite',
+                        'marquee': 'marquee 20s linear infinite',
+                        'blink': 'blink 1.2s step-end infinite'
                     },
                     keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' }
                         },
-                        gridScroll: {
-                            '0%': { backgroundPosition: '0 0' },
-                            '100%': { backgroundPosition: '50px 50px' }
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' }
                         }
                     }
                 }
@@ -59,74 +65,143 @@
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; min-height: 100dvh; overflow-x: hidden; scroll-behavior: smooth; }
-        .bg-eid-grid { background-size: 50px 50px; background-image: radial-gradient(circle, rgba(245, 158, 11, 0.25) 2.5px, transparent 2.5px); }
-        .dark .bg-eid-grid { background-image: radial-gradient(circle, rgba(245, 158, 11, 0.15) 2px, transparent 2px); }
-        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-        .dark .glass-panel { background: rgba(6, 78, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-        .mirror { transform: scaleX(-1); }
-        #countdown-box { opacity: 0.9; font-weight: 800; pointer-events: none; text-shadow: 4px 4px 0px #047857, -4px -4px 0px #F59E0B; z-index: 50; color: white; font-family: 'Unbounded', sans-serif; }
-        .flash-active { animation: flash 0.4s ease-out; }
-        @keyframes flash { 0% { background: #fff; opacity: 1; } 100% { background: transparent; opacity: 0; } }
+        
+        /* Modernized Retro Grid Y2K */
+        .bg-retro-grid { 
+            background-color: #F8F9FA;
+            background-image: 
+                linear-gradient(rgba(0, 255, 102, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 102, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center center;
+        }
+        .dark .bg-retro-grid { 
+            background-color: #0A0A0C;
+            background-image: 
+                linear-gradient(rgba(0, 255, 102, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 102, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
 
-        #canvas-wrapper { width: auto; max-width: 100%; border-radius: 14px; border: 4px solid #000; box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); background: #eee; transition: all 0.3s; position: relative; display: inline-block; overflow: hidden; }
-        .dark #canvas-wrapper { border-color: #fff; box-shadow: 8px 8px 0px 0px #F59E0B; }
+        /* Modern brutalist Tech Window */
+        .brutalist-window {
+            border: 4px solid #000000;
+            border-radius: 12px;
+            box-shadow: 8px 8px 0px 0px #000000;
+            background: #FFFFFF;
+            overflow: hidden;
+        }
+        .dark .brutalist-window {
+            border-color: #FFFFFF;
+            box-shadow: 8px 8px 0px 0px #00FF66;
+            background: #121214;
+        }
+
+        .window-header {
+            border-bottom: 4px solid #000000;
+            background-color: #000000;
+            color: #00FF66;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 9px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dark .window-header {
+            background-color: #1A1A1E;
+            color: #00FF66;
+            border-bottom-color: #FFFFFF;
+        }
+
+        .mirror { transform: scaleX(-1); }
+        #countdown-box { opacity: 0.95; font-weight: 900; pointer-events: none; text-shadow: 6px 6px 0px #000000, -6px -6px 0px #00FF66; z-index: 50; color: #FFEA00; font-family: 'Unbounded', sans-serif; }
+        .flash-active { animation: flash 0.3s ease-out; }
+        @keyframes flash { 0% { background: #FFFFFF; opacity: 1; } 100% { background: transparent; opacity: 0; } }
+
+        /* Canvas Wrapper untuk Stiker */
+        #canvas-wrapper { width: auto; max-width: 100%; border: 4px solid #000000; box-shadow: 8px 8px 0px 0px #000000; background: #E5E7EB; transition: all 0.3s; position: relative; display: inline-block; overflow: hidden; }
+        .dark #canvas-wrapper { border-color: #FFFFFF; box-shadow: 8px 8px 0px 0px #00FF66; }
         canvas { display: block; width: 100%; height: auto; max-height: 70vh; }
         #sticker-area { pointer-events: none; }
-        #sticker-area img { pointer-events: auto; touch-action: none; }
-        .sticker-active { outline: 3px dashed #F59E0B; outline-offset: 2px; }
+        #sticker-area img { pointer-events: auto; touch-action: none; filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.4)); }
+        .dark #sticker-area img { filter: drop-shadow(4px 4px 0px #00FF66); }
+        .sticker-active { outline: 4px dashed #FFEA00; outline-offset: 4px; }
+        .dark .sticker-active { outline: 4px dashed #00FF66; }
 
-        .btn-eid { border-radius: 12px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; border: 3px solid #000; box-shadow: 4px 4px 0px 0px #000; transition: all 150ms ease; user-select: none; -webkit-tap-highlight-color: transparent; position: relative; }
-        .dark .btn-eid { border-color: #fff; box-shadow: 4px 4px 0px 0px #F59E0B; }
-        .btn-eid:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: 0px 0px 0px 0px #000; }
-        .dark .btn-eid:active:not(:disabled) { box-shadow: 0px 0px 0px 0px #F59E0B; transform: translate(4px, 4px); }
-        .btn-eid:disabled { opacity: 0.6; cursor: not-allowed; filter: grayscale(100%); transform: none; }
-        .btn-choice.is-active { background-color: #047857 !important; color: #fff !important; border-color: #000 !important; box-shadow: inset 4px 4px 0px 0px rgba(0,0,0,0.3) !important; }
-        .dark .btn-choice.is-active { background-color: #F59E0B !important; border-color: #fff !important; color: #000 !important; box-shadow: inset 4px 4px 0px 0px rgba(0,0,0,0.3) !important; }
+        /* Modern Y2K Brutalist Buttons */
+        .btn-y2k { 
+            border-radius: 8px; 
+            font-weight: 900; 
+            letter-spacing: 0.05em; 
+            text-transform: uppercase; 
+            border: 3px solid #000000; 
+            box-shadow: 4px 4px 0px 0px #000000; 
+            transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1); 
+            user-select: none; 
+            position: relative; 
+        }
+        .dark .btn-y2k { border-color: #FFFFFF; box-shadow: 4px 4px 0px 0px #00FF66; }
+        .btn-y2k:active:not(:disabled) { transform: translate(3px, 3px); box-shadow: 1px 1px 0px 0px #000000; }
+        .dark .btn-y2k:active:not(:disabled) { box-shadow: 1px 1px 0px 0px #00FF66; transform: translate(3px, 3px); }
+        .btn-y2k:disabled { opacity: 0.4; cursor: not-allowed; filter: grayscale(100%); transform: none; box-shadow: 0px 0px 0px 0px #000000; }
+        
+        .btn-choice.is-active { background-color: #00FF66 !important; color: #000000 !important; border-color: #000000 !important; box-shadow: inset 4px 4px 0px 0px rgba(0,0,0,0.2) !important; }
+        .dark .btn-choice.is-active { background-color: #FFEA00 !important; border-color: #FFFFFF !important; color: #000000 !important; box-shadow: inset 4px 4px 0px 0px rgba(0,0,0,0.2) !important; }
 
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .editor-container { animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .editor-container { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-        #bg-picker { -webkit-appearance: none; border: 3px solid #000; width: 44px; height: 44px; border-radius: 12px; cursor: pointer; padding: 0; overflow: hidden; box-shadow: 3px 3px 0px #000;}
-        .dark #bg-picker { border-color: #fff; box-shadow: 3px 3px 0px #F59E0B; }
+        #bg-picker { -webkit-appearance: none; border: 3px solid #000000; width: 44px; height: 44px; border-radius: 8px; cursor: pointer; padding: 0; overflow: hidden; box-shadow: 3px 3px 0px #000000;}
+        .dark #bg-picker { border-color: #FFFFFF; box-shadow: 3px 3px 0px #00FF66; }
         #bg-picker::-webkit-color-swatch-wrapper { padding: 0; }
-        #bg-picker::-webkit-color-swatch { border: none; border-radius: 8px; }
-        .font-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        @keyframes toastFade { 0% { top: -100px; opacity: 0; } 10% { top: 20px; opacity: 1; } 90% { top: 20px; opacity: 1; } 100% { top: -100px; opacity: 0; } }
-        .toast-show { animation: toastFade 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .float-anim { animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        #bg-picker::-webkit-color-swatch { border: none; border-radius: 4px; }
         
-        .sticker-thumb { width: 45px; height: 45px; object-fit: contain; cursor: pointer; padding: 4px; border-radius: 8px; border: 2px solid transparent; transition: all 0.2s; }
-        .sticker-thumb:hover { border-color: #F59E0B; transform: scale(1.1); background: rgba(255,255,255,0.5); }
+        .font-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        
+        /* Modern Retro Toast */
+        @keyframes toastSlide { 0% { right: -100%; opacity: 0; } 10% { right: 20px; opacity: 1; } 90% { right: 20px; opacity: 1; } 100% { right: -100%; opacity: 0; } }
+        .toast-show { animation: toastSlide 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        
+        .float-anim { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(3deg); } }
+        
+        .sticker-thumb { width: 50px; height: 50px; object-fit: contain; cursor: pointer; padding: 4px; border: 3px solid #000000; border-radius: 8px; background: #FFFFFF; box-shadow: 2px 2px 0px #000000; transition: all 0.2s; }
+        .dark .sticker-thumb { border-color: #FFFFFF; background: #1A1A1E; box-shadow: 2px 2px 0px #00FF66; }
+        .sticker-thumb:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0px #FFEA00; border-color: #000000; }
+        .dark .sticker-thumb:hover { box-shadow: 4px 4px 0px #00FF66; border-color: #FFFFFF; }
     </style>
 </head>
-<body class="text-black dark:text-white bg-eid-cream dark:bg-eid-darker transition-colors duration-500 relative min-h-screen">
+<body class="text-black dark:text-white bg-retro-grid transition-colors duration-500 relative min-h-screen">
 
-    <!-- Animasi Background -->
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div class="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-eid-green/20 dark:bg-eid-green/40 rounded-full blur-[80px] mix-blend-multiply dark:mix-blend-screen animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-[50vw] h-[50vw] bg-eid-gold/30 dark:bg-eid-gold/20 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen animate-blob" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-[-10%] left-[20%] w-[70vw] h-[70vw] bg-eid-green/30 dark:bg-eid-dark/50 rounded-full blur-[90px] mix-blend-multiply dark:mix-blend-screen animate-blob" style="animation-delay: 4s;"></div>
-        <div class="absolute inset-0 bg-eid-grid animate-grid-scroll opacity-80 dark:opacity-60"></div>
+    <!-- Top Marquee Bar (Vibe High-Tech) -->
+    <div class="w-full bg-black text-y2k-green font-mono text-[10px] sm:text-xs py-2.5 border-b-4 border-black dark:border-white overflow-hidden whitespace-nowrap fixed top-0 z-[999] tracking-wider">
+        <div class="animate-marquee inline-block font-bold">
+            ⚡ EID MUBARAK SYSTEM v2.5 ⚡ EID STUDIO PRO: HYBRID HIGH-TECH Y2K EDITION ⚡ UNLIMITED GIF BURST MODE ENABLED ⚡ CUSTOM STICKER INTEGRATED ⚡ ENJOY TAKBIRAN VIBES WITH BGM ⚡ 
+        </div>
     </div>
 
-    <!-- Toast UI -->
-    <div id="toast" class="fixed left-1/2 transform -translate-x-1/2 -top-[100px] z-[999] bg-eid-green dark:bg-eid-gold text-white dark:text-black px-6 py-3 rounded-full border-2 border-black dark:border-white shadow-eid dark:shadow-eid-dark font-bold text-sm text-center flex items-center gap-2 transition-all">
-        <span id="toast-icon">🌙</span>
-        <span id="toast-msg">Pesan disini</span>
+    <!-- Retro Toast Notification -->
+    <div id="toast" class="fixed top-[60px] -right-[100%] z-[1000] bg-white dark:bg-[#121214] text-black dark:text-white px-5 py-3.5 border-4 border-black dark:border-white shadow-brutal dark:shadow-brutal-green font-bold text-xs sm:text-sm flex items-center gap-3 transition-all min-w-[280px]">
+        <span id="toast-icon" class="text-xl bg-y2k-yellow text-black px-2 py-1 border-2 border-black font-mono">OK</span>
+        <div class="flex flex-col">
+            <span class="font-mono text-[8px] text-y2k-green uppercase">SYS_LOG_ACTIVE</span>
+            <span id="toast-msg">Pesan disini</span>
+        </div>
     </div>
 
-    <!-- Music Player (Hidden UI, button controls) -->
-    <button onclick="toggleMusic()" class="fixed top-4 left-4 z-[200] w-12 h-12 glass-panel border-3 border-black dark:border-white rounded-full flex items-center justify-center shadow-eid dark:shadow-eid-dark hover:scale-110 transition-transform float-anim text-2xl">
+    <!-- Music Player (Slick Minimalist Controller) -->
+    <button onclick="toggleMusic()" class="fixed top-[52px] sm:top-[64px] left-4 z-[200] w-12 h-12 bg-y2k-green text-black border-4 border-black rounded-lg flex items-center justify-center shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-brutal-hover transition-all text-xl">
         <span id="music-icon">🎵</span>
     </button>
     <audio id="bg-music" loop>
         <source src="music/bgm.mp3" type="audio/mpeg">
     </audio>
 
-    <button onclick="toggleTheme()" class="fixed top-4 right-4 z-[200] w-12 h-12 glass-panel border-3 border-black dark:border-white rounded-full flex items-center justify-center shadow-eid dark:shadow-eid-dark hover:scale-110 transition-transform float-anim text-2xl">
+    <!-- Theme Toggle (Light / Dark) -->
+    <button onclick="toggleTheme()" class="fixed top-[52px] sm:top-[64px] right-4 z-[200] w-12 h-12 bg-y2k-yellow dark:bg-y2k-green text-black border-4 border-black dark:border-white rounded-lg flex items-center justify-center shadow-brutal dark:shadow-brutal-green hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-brutal-hover transition-all text-xl">
         <span class="dark:hidden">☀️</span>
         <span class="hidden dark:block">🌙</span>
     </button>
@@ -134,86 +209,104 @@
     <div id="flash" class="fixed inset-0 z-[200] pointer-events-none"></div>
 
     <!-- WELCOME SCREEN -->
-    <section id="welcome-screen" class="fixed inset-0 z-[150] flex items-center justify-center p-4 lg:p-6">
-        <div class="w-full max-w-md space-y-8 text-center relative">
-            
-            <!-- STIKER MELAYANG CUSTOM (Mengambil dari folder stickers/) -->
-            <img src="float1.png" onerror="this.style.display='none'" class="absolute -top-10 -left-6 w-20 sm:w-28 object-contain float-anim hidden sm:block drop-shadow-lg" style="animation-delay: 0.2s" alt="Float 1">
-            <img src="float2.png" onerror="this.style.display='none'" class="absolute -bottom-10 -right-6 w-20 sm:w-28 object-contain float-anim hidden sm:block drop-shadow-lg" style="animation-delay: 0.5s" alt="Float 2">
-            <img src="/float3.png" onerror="this.style.display='none'" class="absolute top-20 -right-4 w-16 sm:w-24 object-contain float-anim hidden sm:block drop-shadow-lg" style="animation-delay: 0.8s" alt="Float 3">
+    <section id="welcome-screen" class="fixed inset-0 z-[150] flex items-center justify-center p-4 lg:p-6 mt-10">
+        
+        <!-- STIKER MELAYANG CUSTOM (Mengambil dari folder stickers/) -->
+        <img src="stickers/float1.png" onerror="this.style.display='none'" class="absolute top-[20%] left-[10%] w-24 sm:w-32 object-contain float-anim hidden sm:block filter drop-shadow-[5px_5px_0_#000000] dark:drop-shadow-[5px_5px_0_#00FF66]" style="animation-delay: 0.2s" alt="Float 1">
+        <img src="stickers/float2.png" onerror="this.style.display='none'" class="absolute bottom-[20%] right-[10%] w-24 sm:w-32 object-contain float-anim hidden sm:block filter drop-shadow-[5px_5px_0_#00FF66] dark:drop-shadow-[5px_5px_0_#FFEA00]" style="animation-delay: 0.5s" alt="Float 2">
+        <img src="stickers/float3.png" onerror="this.style.display='none'" class="absolute top-[15%] right-[20%] w-16 sm:w-20 object-contain float-anim hidden sm:block filter drop-shadow-[5px_5px_0_#FFEA00] dark:drop-shadow-[5px_5px_0_#FFFFFF]" style="animation-delay: 0.8s" alt="Float 3">
 
-            <div class="space-y-2 glass-panel border-4 border-black dark:border-white p-6 rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_#F59E0B] transform -rotate-2 backdrop-blur-lg relative z-10">
-                <h1 class="text-5xl sm:text-6xl font-black italic tracking-tighter text-eid-green dark:text-eid-gold uppercase drop-shadow-md" style="font-family: 'Unbounded', sans-serif; -webkit-text-stroke: 2px black;">SNAP<br>STUDIO</h1>
-                <p class="text-white dark:text-black text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] mt-2 bg-eid-gold dark:bg-white inline-block px-3 py-1 border-2 border-black rounded-full shadow-sm">Idul Adha Series by Ocit</p>
-            </div>
-            
-            <div id="step-name" class="space-y-4 pt-8 relative z-10">
-                <input type="text" id="user-name" placeholder="MASUKKAN NAMA KAMU..." class="w-full glass-panel border-3 border-black dark:border-white p-5 rounded-2xl text-center font-black outline-none focus:bg-eid-cream dark:focus:bg-eid-green/50 uppercase transition-all shadow-eid dark:shadow-eid-dark text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-300">
-                <button onclick="goToLayoutStep()" class="btn-eid bg-eid-green dark:bg-eid-gold text-white dark:text-black w-full py-5 rounded-2xl text-lg">Mulai Foto Bareng! 📸</button>
-            </div>
-
-            <div id="step-layout" class="space-y-6 hidden animate-[slideUp_0.4s_ease] pt-8 relative z-10">
-                <p class="font-black uppercase tracking-widest text-sm bg-black text-white dark:bg-white dark:text-black inline-block px-4 py-2 rounded-full border-2 border-transparent shadow-md">Pilih Gaya Frame 📸</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <button onclick="selectLayoutAndStart('strip')" class="btn-eid btn-choice glass-panel text-black dark:text-white p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center gap-3 h-32 sm:h-40 transition-all">
-                        <div class="w-8 h-16 bg-eid-green/30 rounded-lg border-2 border-black dark:border-white flex flex-col gap-1 p-1 shadow-sm">
-                            <div class="bg-black/80 dark:bg-white/80 flex-1 rounded-sm"></div><div class="bg-black/80 dark:bg-white/80 flex-1 rounded-sm"></div><div class="bg-black/80 dark:bg-white/80 flex-1 rounded-sm"></div>
-                        </div>
-                        <span class="text-[10px] sm:text-xs font-black tracking-wide">Strip (3)</span>
-                    </button>
-                    <button onclick="selectLayoutAndStart('grid')" class="btn-eid btn-choice glass-panel text-black dark:text-white p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center gap-3 h-32 sm:h-40 transition-all">
-                        <div class="w-12 h-12 bg-eid-gold/30 rounded-lg border-2 border-black dark:border-white grid grid-cols-2 gap-1 p-1 shadow-sm">
-                            <div class="bg-black/80 dark:bg-white/80 rounded-sm"></div><div class="bg-black/80 dark:bg-white/80 rounded-sm"></div><div class="bg-black/80 dark:bg-white/80 rounded-sm"></div><div class="bg-black/80 dark:bg-white/80 rounded-sm"></div>
-                        </div>
-                        <span class="text-[10px] sm:text-xs font-black tracking-wide">Grid (4)</span>
-                    </button>
-                    <!-- NEW: Tombol Layout Animasi GIF -->
-                    <button onclick="selectLayoutAndStart('gif')" class="col-span-2 btn-eid btn-choice glass-panel text-black dark:text-white p-4 rounded-2xl flex flex-col items-center justify-center gap-2 h-28 transition-all">
-                        <div class="text-3xl">🎞️</div>
-                        <span class="text-xs sm:text-sm font-black tracking-wide">Animasi GIF (4 Frame)</span>
-                    </button>
+        <div class="w-full max-w-md relative z-10">
+            <!-- Brutalist Window Container -->
+            <div class="brutalist-window">
+                <!-- Window Title Bar -->
+                <div class="window-header">
+                    <span>EID_STUDIO_V2.EXE</span>
+                    <span class="tracking-widest cursor-pointer hover:text-y2k-yellow">_ □ X</span>
                 </div>
-                <button onclick="backToNameStep()" class="text-[11px] font-black text-gray-700 dark:text-gray-300 uppercase tracking-widest hover:text-black dark:hover:text-white transition-colors block mx-auto mt-4 underline decoration-2 underline-offset-4 drop-shadow-md">← Kembali</button>
+                
+                <div class="p-6 sm:p-8 space-y-8 bg-[#FFFFFF] dark:bg-[#16161A]">
+                    <div class="text-center space-y-2 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                        <h1 class="text-5xl sm:text-6xl font-black italic tracking-tighter text-black dark:text-white uppercase drop-shadow-[5px_5px_0px_#00FF66] dark:drop-shadow-[5px_5px_0px_#00FF66]" style="font-family: 'Unbounded', sans-serif; -webkit-text-stroke: 2px black;">EID<br>STUDIO</h1>
+                        <p class="text-black bg-y2k-yellow text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] mt-2 inline-block px-4 py-1.5 border-3 border-black shadow-brutal-hover">MODERN Y2K EDITION 🐐</p>
+                    </div>
+                    
+                    <div id="step-name" class="space-y-5 pt-2 relative z-10">
+                        <div class="relative">
+                            <span class="absolute -top-3 left-4 bg-y2k-green text-black border-2 border-black px-2 py-0.5 text-[9px] font-black uppercase z-10 shadow-[2px_2px_0_#000]">Input_Name:</span>
+                            <input type="text" id="user-name" placeholder="TULIS NAMAMU DISINI..." class="w-full bg-y2k-lightgray dark:bg-black border-4 border-black dark:border-white p-5 rounded-none text-center font-black outline-none focus:bg-y2k-green/10 dark:focus:bg-y2k-green/20 uppercase transition-all shadow-brutal dark:shadow-brutal-green text-black dark:text-white placeholder-gray-500">
+                        </div>
+                        <button onclick="goToLayoutStep()" class="btn-y2k bg-black text-y2k-green dark:bg-y2k-green dark:text-black w-full py-5 text-base">BOOT SYSTEM 🚀</button>
+                    </div>
+
+                    <div id="step-layout" class="space-y-6 hidden pt-2 relative z-10">
+                        <div class="bg-black dark:bg-white text-y2k-green dark:text-black px-3 py-2 border-l-4 border-y2k-yellow">
+                            <p class="font-mono text-[9px] sm:text-[10px] uppercase animate-blink">SYSTEM_READY // SELECT_FRAMEWAY</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button onclick="selectLayoutAndStart('strip')" class="btn-y2k btn-choice bg-y2k-lightgray dark:bg-y2k-darkgray text-black dark:text-white p-4 sm:p-5 flex flex-col items-center justify-center gap-3 h-32 sm:h-38">
+                                <div class="w-7 h-14 bg-black dark:bg-white flex flex-col gap-1 p-1">
+                                    <div class="bg-y2k-green flex-1"></div><div class="bg-y2k-green flex-1"></div><div class="bg-y2k-green flex-1"></div>
+                                </div>
+                                <span class="text-[9px] sm:text-[10px] font-black tracking-widest">STRIP_3X</span>
+                            </button>
+                            <button onclick="selectLayoutAndStart('grid')" class="btn-y2k btn-choice bg-y2k-lightgray dark:bg-y2k-darkgray text-black dark:text-white p-4 sm:p-5 flex flex-col items-center justify-center gap-3 h-32 sm:h-38">
+                                <div class="w-10 h-10 bg-black dark:bg-white grid grid-cols-2 gap-1 p-1">
+                                    <div class="bg-y2k-green"></div><div class="bg-y2k-green"></div><div class="bg-y2k-green"></div><div class="bg-y2k-green"></div>
+                                </div>
+                                <span class="text-[9px] sm:text-[10px] font-black tracking-widest">GRID_4X</span>
+                            </button>
+                            <button onclick="selectLayoutAndStart('gif')" class="col-span-2 btn-y2k btn-choice bg-y2k-yellow text-black p-4 flex flex-col items-center justify-center gap-2 h-24 hover:bg-y2k-green transition-all">
+                                <div class="text-3xl filter drop-shadow-[2px_2px_0px_#000]">🎞️</div>
+                                <span class="text-xs sm:text-sm font-black tracking-widest">AUTO_BURST_GIF_BOOMERANG</span>
+                            </button>
+                        </div>
+                        <button onclick="backToNameStep()" class="font-mono text-[9px] text-gray-500 hover:text-black dark:hover:text-y2k-green transition-colors block mx-auto mt-2 underline">← CHANGE_USER_ACCESS</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- MAIN APP - RESPONSIVE -->
-    <main id="main-app" class="hidden w-full flex-col lg:flex-row relative z-10 min-h-screen">
+    <main id="main-app" class="hidden w-full flex-col lg:flex-row relative z-10 min-h-screen pt-12">
         
         <!-- CAMERA SECTION -->
         <div id="camera-section" class="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex flex-col items-center justify-center p-4 lg:p-8 relative shrink-0">
-            <div class="relative w-full max-w-md aspect-square rounded-[2rem] overflow-hidden border-4 border-black dark:border-white bg-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_#F59E0B]">
-                <video id="video" autoplay playsinline class="mirror w-full h-full object-cover"></video>
-                <div id="countdown-box" class="absolute inset-0 flex items-center justify-center text-[150px]"></div>
+            <!-- Retro Monitor Frame -->
+            <div class="relative w-full max-w-md aspect-square brutalist-window overflow-hidden bg-black p-2 sm:p-4 pb-16 sm:pb-20">
+                <div class="w-full h-full border-4 border-y2k-green dark:border-white bg-[#0A0A0C] relative overflow-hidden">
+                    <video id="video" autoplay playsinline class="mirror w-full h-full object-cover"></video>
+                    <div id="countdown-box" class="absolute inset-0 flex items-center justify-center text-[150px]"></div>
+                </div>
                 
-                <div id="snap-container" class="absolute bottom-6 left-0 right-0 flex flex-col justify-center items-center gap-4">
-                    <button onclick="switchCamera()" class="btn-eid w-12 h-12 sm:w-14 sm:h-14 bg-eid-gold dark:bg-eid-cream rounded-full flex items-center justify-center border-3 border-black text-xl sm:text-2xl dark:text-black">🔄</button>
-                    <button id="snap-btn" onclick="takeIndividualSnap()" class="w-16 h-16 sm:w-20 sm:h-20 bg-eid-green dark:bg-eid-gold border-4 border-black dark:border-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group px-0">
-                        <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full border-2 border-black flex items-center justify-center text-xl sm:text-2xl group-hover:bg-eid-cream transition-colors">📸</div>
+                <div id="snap-container" class="absolute bottom-2.5 sm:bottom-4 left-0 right-0 flex justify-center items-center gap-6">
+                    <button onclick="switchCamera()" class="btn-y2k w-11 h-11 bg-y2k-yellow text-black rounded-none flex items-center justify-center text-lg shadow-[2px_2px_0_#000]">🔄</button>
+                    <button id="snap-btn" onclick="takeIndividualSnap()" class="w-20 h-11 sm:w-28 sm:h-13 bg-y2k-green text-black border-3 border-black flex items-center justify-center hover:bg-y2k-yellow active:translate-y-0.5 transition-all shadow-[4px_4px_0px_0px_#000000] font-black text-sm tracking-wider">
+                        CAPTURE
                     </button>
                 </div>
             </div>
 
-            <div id="capture-controls" class="mt-8 w-full max-w-md flex flex-col items-center gap-4 opacity-0 pointer-events-none transition-all duration-300">
-                <p class="font-black uppercase tracking-widest text-[10px] sm:text-xs bg-black text-white dark:bg-white dark:text-black px-3 py-1 rounded-full border-2 border-black dark:border-white shadow-md">Hasil Jepretan 👀</p>
+            <div id="capture-controls" class="mt-6 w-full max-w-md flex flex-col items-center gap-3 opacity-0 pointer-events-none transition-all duration-300">
+                <div class="bg-black text-y2k-green font-mono px-4 py-1 text-[9px] border-2 border-y2k-green">SYS: PREVIEW_LOADED_OK</div>
                 <div class="flex gap-4 w-full">
-                    <button onclick="retakePhoto()" class="btn-eid glass-panel text-black dark:text-white flex-1 px-4 py-3 sm:px-6 sm:py-4 rounded-xl text-xs sm:text-sm">Ulangi</button>
-                    <button onclick="keepPhoto()" class="btn-eid bg-eid-gold dark:bg-eid-green text-black dark:text-white flex-1 px-4 py-3 sm:px-6 sm:py-4 rounded-xl text-xs sm:text-sm">Keep It ✨</button>
+                    <button onclick="retakePhoto()" class="btn-y2k bg-white dark:bg-black text-black dark:text-white flex-1 px-4 py-3 text-xs sm:text-sm">DELETE</button>
+                    <button onclick="keepPhoto()" class="btn-y2k bg-y2k-green text-black flex-1 px-4 py-3 text-xs sm:text-sm">KEEP_IT</button>
                 </div>
             </div>
 
-            <div id="layout-tools" class="mt-6 w-full max-w-md">
-                <div class="glass-panel p-2 sm:p-3 rounded-2xl flex gap-2 border-3 border-black dark:border-white shadow-eid dark:shadow-eid-dark">
-                    <button onclick="setLayout('strip')" id="btn-strip" class="btn-eid btn-choice flex-1 py-2 sm:py-3 bg-white/50 dark:bg-black/50 text-black dark:text-white rounded-xl text-[10px] sm:text-xs backdrop-blur-md">Strip</button>
-                    <button onclick="setLayout('grid')" id="btn-grid" class="btn-eid btn-choice flex-1 py-2 sm:py-3 bg-white/50 dark:bg-black/50 text-black dark:text-white rounded-xl text-[10px] sm:text-xs backdrop-blur-md">Grid</button>
-                    <button onclick="setLayout('gif')" id="btn-gif" class="btn-eid btn-choice flex-1 py-2 sm:py-3 bg-white/50 dark:bg-black/50 text-black dark:text-white rounded-xl text-[10px] sm:text-xs backdrop-blur-md">Animasi</button>
+            <div id="layout-tools" class="mt-5 w-full max-w-md">
+                <div class="bg-white dark:bg-[#16161A] p-2.5 border-4 border-black dark:border-white flex gap-2 shadow-brutal dark:shadow-brutal-green">
+                    <button onclick="setLayout('strip')" id="btn-strip" class="btn-y2k btn-choice flex-1 py-2 sm:py-3 bg-gray-200 dark:bg-y2k-darkgray text-black dark:text-white text-[10px] sm:text-xs">STRIP</button>
+                    <button onclick="setLayout('grid')" id="btn-grid" class="btn-y2k btn-choice flex-1 py-2 sm:py-3 bg-gray-200 dark:bg-y2k-darkgray text-black dark:text-white text-[10px] sm:text-xs">GRID</button>
+                    <button onclick="setLayout('gif')" id="btn-gif" class="btn-y2k btn-choice flex-1 py-2 sm:py-3 bg-gray-200 dark:bg-y2k-darkgray text-black dark:text-white text-[10px] sm:text-xs">ANIMASI</button>
                 </div>
             </div>
         </div>
 
         <!-- EDITING SECTION -->
-        <div id="editing-section" class="w-full lg:w-1/2 glass-panel border-t-4 lg:border-t-0 lg:border-l-4 border-black dark:border-white flex flex-col items-center p-4 lg:p-12 shrink-0 shadow-[-10px_0px_30px_rgba(0,0,0,0.1)]">
+        <div id="editing-section" class="w-full lg:w-1/2 bg-[#FFFFFF] dark:bg-[#121214] border-t-4 lg:border-t-0 lg:border-l-4 border-black dark:border-white flex flex-col items-center p-4 lg:p-12 shrink-0 shadow-[-10px_0px_30px_rgba(0,0,0,0.05)]">
             <div class="w-full max-w-md space-y-8 sm:space-y-10 pb-12">
                 <div class="flex flex-col items-center w-full">
                     <!-- WRAPPER UNTUK STIKER & KANVAS -->
@@ -226,117 +319,115 @@
                 <div id="editor-tools" class="hidden editor-container space-y-8 sm:space-y-10">
                     
                     <!-- 10 Filter -->
-                    <div class="space-y-4 bg-white/80 dark:bg-eid-dark/80 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border-3 border-black dark:border-white shadow-eid dark:shadow-eid-dark">
-                        <label class="text-[10px] sm:text-xs font-black text-black dark:text-white uppercase tracking-[0.1em] bg-eid-green dark:bg-eid-gold px-2 py-1 rounded-md text-white dark:text-black border-2 border-black block w-max">1. Pilih Filter (10 Opsi) 🎨</label>
+                    <div class="space-y-4 brutalist-window p-4 sm:p-5">
+                        <div class="window-header !p-1.5 !text-[8px] mb-2 bg-y2k-green text-black">FILTER_MOD.EXE</div>
                         <div class="grid grid-cols-5 gap-1.5 sm:gap-2 pt-2">
-                            <button onclick="setFilter('none')" data-filter="none" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Normal</button>
-                            <button onclick="setFilter('grayscale(100%)')" data-filter="grayscale(100%)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">B&W</button>
-                            <button onclick="setFilter('sepia(80%)')" data-filter="sepia(80%)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Sepia</button>
-                            <button onclick="setFilter('contrast(1.4) brightness(0.9)')" data-filter="contrast(1.4) brightness(0.9)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Vintage</button>
-                            <button onclick="setFilter('hue-rotate(30deg) sepia(20%)')" data-filter="hue-rotate(30deg) sepia(20%)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Warm</button>
-                            <button onclick="setFilter('sepia(40%) contrast(1.2) brightness(1.1) hue-rotate(-15deg)')" data-filter="sepia(40%) contrast(1.2) brightness(1.1) hue-rotate(-15deg)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Golden</button>
-                            <button onclick="setFilter('hue-rotate(-50deg) saturate(1.5)')" data-filter="hue-rotate(-50deg) saturate(1.5)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Emerald</button>
-                            <button onclick="setFilter('opacity(0.8) contrast(0.8) brightness(1.2)')" data-filter="opacity(0.8) contrast(0.8) brightness(1.2)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Fade</button>
-                            <button onclick="setFilter('hue-rotate(180deg) saturate(0.8)')" data-filter="hue-rotate(180deg) saturate(0.8)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Cool</button>
-                            <button onclick="setFilter('contrast(1.5) saturate(1.2)')" data-filter="contrast(1.5) saturate(1.2)" class="btn-eid btn-choice bg-white dark:bg-gray-800 text-black dark:text-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-[8px] sm:text-[9px]">Crisp</button>
+                            <button onclick="setFilter('none')" data-filter="none" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Normal</button>
+                            <button onclick="setFilter('grayscale(100%)')" data-filter="grayscale(100%)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">B&W</button>
+                            <button onclick="setFilter('sepia(80%)')" data-filter="sepia(80%)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Sepia</button>
+                            <button onclick="setFilter('contrast(1.4) brightness(0.9)')" data-filter="contrast(1.4) brightness(0.9)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Vintage</button>
+                            <button onclick="setFilter('hue-rotate(30deg) sepia(20%)')" data-filter="hue-rotate(30deg) sepia(20%)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Warm</button>
+                            <button onclick="setFilter('sepia(40%) contrast(1.2) brightness(1.1) hue-rotate(-15deg)')" data-filter="sepia(40%) contrast(1.2) brightness(1.1) hue-rotate(-15deg)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Golden</button>
+                            <button onclick="setFilter('hue-rotate(-50deg) saturate(1.5)')" data-filter="hue-rotate(-50deg) saturate(1.5)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Emerald</button>
+                            <button onclick="setFilter('opacity(0.8) contrast(0.8) brightness(1.2)')" data-filter="opacity(0.8) contrast(0.8) brightness(1.2)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Fade</button>
+                            <button onclick="setFilter('hue-rotate(180deg) saturate(0.8)')" data-filter="hue-rotate(180deg) saturate(0.8)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Cool</button>
+                            <button onclick="setFilter('contrast(1.5) saturate(1.2)')" data-filter="contrast(1.5) saturate(1.2)" class="btn-y2k btn-choice bg-white dark:bg-black text-black dark:text-white p-1.5 text-[8px] sm:text-[9px]">Crisp</button>
                         </div>
                     </div>
 
                     <!-- 20 Fonts -->
-                    <div class="space-y-4 bg-white/80 dark:bg-eid-dark/80 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border-3 border-black dark:border-white shadow-eid dark:shadow-eid-dark">
-                        <label class="text-[10px] sm:text-xs font-black text-black dark:text-white uppercase tracking-[0.1em] bg-eid-gold dark:bg-eid-green px-2 py-1 rounded-md text-black dark:text-white border-2 border-black block w-max">2. Pilih Font Islami 🔠</label>
+                    <div class="space-y-4 brutalist-window p-4 sm:p-5">
+                        <div class="window-header !p-1.5 !text-[8px] mb-2 bg-y2k-yellow text-black">TYPOGRAPHY.DLL</div>
                         <div class="font-grid pt-2 grid-cols-4 sm:grid-cols-5">
-                            <button onclick="setFont('Amiri')" data-font="Amiri" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Amiri</button>
-                            <button onclick="setFont('Aref Ruqaa')" data-font="Aref Ruqaa" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Aref Ruq</button>
-                            <button onclick="setFont('Cairo')" data-font="Cairo" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Cairo</button>
-                            <button onclick="setFont('Changa')" data-font="Changa" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Changa</button>
-                            <button onclick="setFont('El Messiri')" data-font="El Messiri" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Messiri</button>
-                            <button onclick="setFont('Katibeh')" data-font="Katibeh" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Katibeh</button>
-                            <button onclick="setFont('Lalezar')" data-font="Lalezar" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Lalezar</button>
-                            <button onclick="setFont('Lateef')" data-font="Lateef" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Lateef</button>
-                            <button onclick="setFont('Mada')" data-font="Mada" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Mada</button>
-                            <button onclick="setFont('Markazi Text')" data-font="Markazi Text" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Markazi</button>
-                            <button onclick="setFont('Mirza')" data-font="Mirza" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Mirza</button>
-                            <button onclick="setFont('Rakkas')" data-font="Rakkas" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Rakkas</button>
-                            <button onclick="setFont('Reem Kufi')" data-font="Reem Kufi" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Reem Kufi</button>
-                            <button onclick="setFont('Tajawal')" data-font="Tajawal" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Tajawal</button>
-                            <button onclick="setFont('Cinzel')" data-font="Cinzel" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Cinzel</button>
-                            <button onclick="setFont('Philosopher')" data-font="Philosopher" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Philos</button>
-                            <button onclick="setFont('Marcellus')" data-font="Marcellus" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Marcellus</button>
-                            <button onclick="setFont('Cormorant Garamond')" data-font="Cormorant Garamond" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[7px] sm:text-[8px]">Garamond</button>
-                            <button onclick="setFont('Tangerine')" data-font="Tangerine" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px] italic">Tangerine</button>
-                            <button onclick="setFont('Almendra')" data-font="Almendra" class="btn-eid btn-choice bg-white dark:bg-gray-800 p-1.5 sm:p-2 text-black dark:text-white rounded-lg text-[8px] sm:text-[9px]">Almendra</button>
+                            <button onclick="setFont('Amiri')" data-font="Amiri" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Amiri</button>
+                            <button onclick="setFont('Aref Ruqaa')" data-font="Aref Ruqaa" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Aref Ruq</button>
+                            <button onclick="setFont('Cairo')" data-font="Cairo" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Cairo</button>
+                            <button onclick="setFont('Changa')" data-font="Changa" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Changa</button>
+                            <button onclick="setFont('El Messiri')" data-font="El Messiri" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Messiri</button>
+                            <button onclick="setFont('Katibeh')" data-font="Katibeh" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Katibeh</button>
+                            <button onclick="setFont('Lalezar')" data-font="Lalezar" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Lalezar</button>
+                            <button onclick="setFont('Lateef')" data-font="Lateef" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Lateef</button>
+                            <button onclick="setFont('Mada')" data-font="Mada" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Mada</button>
+                            <button onclick="setFont('Markazi Text')" data-font="Markazi Text" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Markazi</button>
+                            <button onclick="setFont('Mirza')" data-font="Mirza" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Mirza</button>
+                            <button onclick="setFont('Rakkas')" data-font="Rakkas" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Rakkas</button>
+                            <button onclick="setFont('Reem Kufi')" data-font="Reem Kufi" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Reem Kufi</button>
+                            <button onclick="setFont('Tajawal')" data-font="Tajawal" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Tajawal</button>
+                            <button onclick="setFont('Cinzel')" data-font="Cinzel" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Cinzel</button>
+                            <button onclick="setFont('Philosopher')" data-font="Philosopher" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Philos</button>
+                            <button onclick="setFont('Marcellus')" data-font="Marcellus" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Marcellus</button>
+                            <button onclick="setFont('Cormorant Garamond')" data-font="Cormorant Garamond" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[7px] sm:text-[8px]">Garamond</button>
+                            <button onclick="setFont('Press Start 2P')" data-font="Press Start 2P" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[5px] sm:text-[6px]">8-BIT</button>
+                            <button onclick="setFont('Almendra')" data-font="Almendra" class="btn-y2k btn-choice bg-white dark:bg-black p-1.5 text-black dark:text-white text-[8px] sm:text-[9px]">Almendra</button>
                         </div>
                     </div>
 
                     <!-- Caption & BG -->
-                    <div class="space-y-4 bg-white/80 dark:bg-eid-dark/80 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border-3 border-black dark:border-white shadow-eid dark:shadow-eid-dark">
-                        <label class="text-[10px] sm:text-xs font-black text-black dark:text-white uppercase tracking-[0.1em] bg-white dark:bg-gray-800 px-2 py-1 rounded-md text-black dark:text-white border-2 border-black block w-max">3. Caption & Frame 🖍️</label>
+                    <div class="space-y-4 brutalist-window p-4 sm:p-5">
+                        <div class="window-header !p-1.5 !text-[8px] mb-2 bg-[#000000] text-y2k-green">CUSTOMIZE_FRAME.INI</div>
                         <div class="flex gap-2 sm:gap-3 pt-2">
-                            <input type="text" id="custom-text" placeholder="SELAMAT IDUL ADHA..." maxlength="20" oninput="drawFinal()" class="flex-1 bg-white dark:bg-gray-800 border-3 border-black dark:border-white p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold outline-none focus:bg-eid-cream dark:focus:bg-eid-green/50 uppercase text-black dark:text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_#fff]">
+                            <input type="text" id="custom-text" placeholder="WRITE CAPTION..." maxlength="20" oninput="drawFinal()" class="flex-1 bg-[#FFFFFF] dark:bg-black border-4 border-black dark:border-white p-2.5 sm:p-3 rounded-none text-xs sm:text-sm font-black outline-none focus:bg-y2k-green/10 uppercase text-black dark:text-white shadow-[4px_4px_0_#000000] dark:shadow-[4px_4px_0_#00FF66]">
                             <input type="color" id="bg-picker" value="#ffffff" oninput="changeBg(this.value)">
                         </div>
                     </div>
 
                     <!-- Sistem Stiker Custom PNG -->
-                    <div class="space-y-4 bg-white/80 dark:bg-eid-dark/80 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border-3 border-black dark:border-white shadow-eid dark:shadow-eid-dark">
-                        <div class="flex justify-between items-center">
-                            <label class="text-[10px] sm:text-xs font-black text-black dark:text-white uppercase tracking-[0.1em] bg-eid-green dark:bg-eid-gold px-2 py-1 rounded-md text-white dark:text-black border-2 border-black block w-max">4. Tambah Stiker 🌟</label>
-                            
-                            <button onclick="document.getElementById('custom-sticker-upload').click()" class="btn-eid bg-eid-gold dark:bg-white text-black text-[9px] sm:text-[10px] px-2 py-1.5 rounded-lg shadow-sm border-2 border-black">📁 Dari File</button>
+                    <div class="space-y-4 brutalist-window p-4 sm:p-5">
+                        <div class="window-header !p-1.5 !text-[8px] mb-2 bg-y2k-green text-black flex justify-between">
+                            <span>STICKERS_DIR</span>
+                            <button onclick="document.getElementById('custom-sticker-upload').click()" class="bg-black text-white hover:text-y2k-yellow px-2 border border-white font-black text-[8px]">UPLOAD</button>
                             <input type="file" id="custom-sticker-upload" accept="image/*" class="hidden" onchange="addCustomStickerFile(event)">
                         </div>
 
                         <!-- Tempat Stiker Di-Generate dari Folder (Array) -->
-                        <div id="sticker-png-list" class="flex gap-3 overflow-x-auto pb-2 no-scrollbar pt-2 items-center">
+                        <div id="sticker-png-list" class="flex gap-3 overflow-x-auto pb-4 no-scrollbar pt-2 items-center bg-gray-100 dark:bg-y2k-darkgray p-2.5 border-2 border-black inset-shadow">
                             <!-- JS akan mengisi area ini -->
                         </div>
 
                         <!-- Kontrol Stiker Aktif -->
-                        <div id="sticker-controls" class="hidden flex items-center gap-2 bg-gray-100 dark:bg-gray-800 border-2 border-black dark:border-white p-2 rounded-xl mt-2 shadow-sm">
-                            <span class="text-[9px] sm:text-[10px] font-bold text-black dark:text-white">Ukuran:</span>
+                        <div id="sticker-controls" class="hidden flex items-center gap-2 bg-black text-white p-2.5 mt-2 border-4 border-y2k-green shadow-[4px_4px_0_#FFEA00]">
+                            <span class="text-[9px] sm:text-[10px] font-mono">SIZE:</span>
                             <input type="range" id="sticker-size-slider" min="30" max="300" value="100" class="flex-1" oninput="resizeActiveSticker(this.value)">
-                            <button onclick="deleteActiveSticker()" class="bg-red-500 text-white border-2 border-black text-[9px] sm:text-[10px] px-2 py-1 rounded font-bold hover:bg-red-600 transition-colors">Hapus</button>
+                            <button onclick="deleteActiveSticker()" class="bg-y2k-yellow text-black border-2 border-black text-[9px] sm:text-[10px] px-3 py-1 font-black hover:bg-white hover:text-black transition-colors">DEL</button>
                         </div>
-                        <p class="text-[8px] sm:text-[9px] text-gray-500 dark:text-gray-300 italic text-center">*Klik stiker di foto untuk digeser & diatur ukurannya</p>
+                        <p class="font-mono text-[8px] sm:text-[9px] text-gray-500 dark:text-gray-400 mt-2">> Click and drag stickers on the canvas to move/resize.</p>
                     </div>
 
                     <!-- Cloud Output Area & Tombol Salin Link -->
-                    <div id="upload-box" class="bg-white/90 dark:bg-eid-darker/90 backdrop-blur-xl border-4 border-black dark:border-white p-4 sm:p-6 rounded-[2rem] flex flex-col items-center gap-4 hidden shadow-eid dark:shadow-eid-dark w-full">
-                         <div id="qr-container" class="bg-white p-2 sm:p-3 rounded-2xl border-3 border-black">
+                    <div id="upload-box" class="brutalist-window p-4 sm:p-6 flex flex-col items-center gap-4 hidden bg-y2k-green w-full">
+                         <div id="qr-container" class="bg-white p-2 sm:p-3 border-4 border-black shadow-[4px_4px_0_#FFEA00]">
                              <img id="qr-code" class="w-28 h-28 sm:w-32 sm:h-32 object-contain" src="" alt="QR">
                          </div>
-                         <p id="upload-status" class="text-[10px] sm:text-xs font-black text-eid-green dark:text-eid-gold uppercase tracking-widest text-center">Menyimpan Sesi...</p>
+                         <p id="upload-status" class="font-mono text-[10px] sm:text-xs font-black text-black bg-white px-2.5 py-1 border-2 border-black uppercase tracking-widest text-center animate-blink">UPLOADING...</p>
                          
-                         <button onclick="copyDriveLink()" class="btn-eid bg-eid-gold dark:bg-white text-black text-[10px] sm:text-xs px-4 py-3 rounded-xl border-2 border-black flex items-center justify-center gap-2 w-full">
-                             <span class="text-base sm:text-lg">📋</span> Salin Link Drive
+                         <button onclick="copyDriveLink()" class="btn-y2k bg-y2k-yellow text-black text-[10px] sm:text-xs px-4 py-3 border-4 border-black w-full flex items-center justify-center gap-2 shadow-brutal">
+                             <span class="text-base sm:text-lg">📋</span> COPY_URL.BAT
                          </button>
                     </div>
 
-                    <!-- ACTIONS BUTTONS (Diperbarui jadi lebih rapi) -->
+                    <!-- ACTIONS BUTTONS -->
                     <div class="space-y-3 pt-4 border-t-4 border-black dark:border-white border-dashed">
                         
-                        <!-- Dua opsi Download: Statis atau Animasi -->
                         <div class="grid grid-cols-2 gap-2 sm:gap-3">
-                            <button onclick="triggerDownloadHD()" class="btn-eid bg-white dark:bg-gray-800 text-black dark:text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1 shadow-sm">
-                                <span class="text-lg sm:text-xl">🖼️</span> Simpan Foto (PNG)
+                            <button onclick="triggerDownloadHD()" class="btn-y2k bg-white dark:bg-black text-black dark:text-white py-3 sm:py-4 text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1">
+                                <span class="text-lg sm:text-xl">🖼️</span> SAVE_PNG
                             </button>
-                            <button onclick="triggerDownloadGIF()" class="btn-eid bg-eid-gold dark:bg-eid-green text-black dark:text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1 shadow-sm">
-                                <span class="text-lg sm:text-xl">🎞️</span> Simpan Animasi (GIF)
+                            <button onclick="triggerDownloadGIF()" class="btn-y2k bg-y2k-green text-black py-3 sm:py-4 text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1">
+                                <span class="text-lg sm:text-xl">🎞️</span> SAVE_GIF
                             </button>
                         </div>
                         
                         <div class="grid grid-cols-2 gap-2 sm:gap-3 mt-2">
-                            <button onclick="triggerSharePhoto()" class="btn-eid bg-eid-green dark:bg-eid-gold text-white dark:text-black py-3 sm:py-4 rounded-xl sm:rounded-2xl text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1">
-                                <span class="text-lg sm:text-xl">✨</span> Bagikan
+                            <button onclick="triggerSharePhoto()" class="btn-y2k bg-y2k-yellow text-black py-3 sm:py-4 text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1">
+                                <span class="text-lg sm:text-xl">✨</span> SHARE
                             </button>
-                            <button id="sync-btn" onclick="processAndUpload()" class="btn-eid bg-black dark:bg-white text-white dark:text-black py-3 sm:py-4 rounded-xl sm:rounded-2xl text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1">
-                                <span class="text-lg sm:text-xl">☁️</span> Simpan Cloud QR
+                            <button id="sync-btn" onclick="processAndUpload()" class="btn-y2k bg-black text-y2k-green dark:bg-white dark:text-black py-3 sm:py-4 text-[10px] sm:text-xs flex flex-col items-center justify-center gap-1">
+                                <span class="text-lg sm:text-xl">☁️</span> UPLOAD_CLOUD
                             </button>
                         </div>
                         
-                        <button onclick="window.location.reload()" class="btn-eid bg-white/50 dark:bg-black/50 text-black dark:text-white w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl text-[9px] sm:text-[10px] mt-4 backdrop-blur-md">
-                            Reset Sesi Baru
+                        <button onclick="window.location.reload()" class="font-mono bg-black text-white w-full py-3.5 border-4 border-y2k-green text-[9px] sm:text-[10px] mt-4 hover:bg-y2k-green hover:text-black transition-colors">
+                            > REBOOT_SYSTEM
                         </button>
                     </div>
                 </div>
@@ -352,8 +443,8 @@
         // KONFIGURASI NAMA FILE STIKER
         // ==========================================
         const DAFTAR_STIKER_PNG = [
-            "1.png", "2.png", "3.png", 
-            "4.png", "5.png", "6.png"
+            "stickers/1.png", "stickers/2.png", "stickers/3.png", 
+            "stickers/4.png", "stickers/5.png", "stickers/6.png"
         ];
 
         const video = document.getElementById('video');
@@ -375,7 +466,7 @@
         
         // Animasi Logic
         let currentGifFrame = 0;
-        let tempGifSnaps = []; // Menyimpan jepretan burst sementara
+        let tempGifSnaps = []; 
         
         setInterval(() => {
             if (currentLayout === 'gif') {
@@ -387,7 +478,7 @@
                     drawFinal();
                 }
             }
-        }, 600); // Ganti foto per 0.6 detik jika dalam mode GIF
+        }, 600);
 
         window.onload = () => {
             const container = document.getElementById('sticker-png-list');
@@ -395,12 +486,11 @@
                 const img = document.createElement('img');
                 img.src = src; img.className = 'sticker-thumb'; img.alt = 'Stiker';
                 img.onerror = () => { img.style.display = 'none'; };
-                img.onclick = () => { createStickerElement(src); showCuteToast("Stiker ditambahkan!", "🌟"); };
+                img.onclick = () => { createStickerElement(src); showCuteToast("STICKER_ADDED.EXE", "🌟"); };
                 container.appendChild(img);
             });
         };
 
-        // Otomatis putar musik di klik pertama pengunjung
         document.body.addEventListener('click', () => {
             if(!isMusicPlaying) {
                 bgMusic.play().then(() => {
@@ -414,20 +504,20 @@
             if(isMusicPlaying) {
                 bgMusic.pause(); isMusicPlaying = false;
                 document.getElementById('music-icon').innerText = '🔇';
-                showCuteToast("Musik dijeda", "🔇");
+                showCuteToast("BGM_PAUSED", "🔇");
             } else {
                 bgMusic.play(); isMusicPlaying = true;
                 document.getElementById('music-icon').innerText = '🎵';
-                showCuteToast("Musik diputar", "🎵");
+                showCuteToast("BGM_PLAYING", "🎵");
             }
         }
 
         function toggleTheme() {
             const html = document.documentElement;
             if (html.classList.contains('dark')) {
-                html.classList.remove('dark'); localStorage.setItem('theme', 'light'); showCuteToast("☀️ Mode Terang Aktif!");
+                html.classList.remove('dark'); localStorage.setItem('theme', 'light'); showCuteToast("LIGHT_MODE.INI", "☀️");
             } else {
-                html.classList.add('dark'); localStorage.setItem('theme', 'dark'); showCuteToast("🌙 Mode Gelap Aktif!");
+                html.classList.add('dark'); localStorage.setItem('theme', 'dark'); showCuteToast("DARK_MODE.INI", "🌙");
             }
         }
 
@@ -435,7 +525,7 @@
             document.documentElement.classList.add('dark');
         } else { document.documentElement.classList.remove('dark'); }
 
-        function showCuteToast(msg, icon = "🌙") {
+        function showCuteToast(msg, icon = "⚠️") {
             const toast = document.getElementById('toast');
             document.getElementById('toast-msg').innerText = msg; document.getElementById('toast-icon').innerText = icon;
             toast.classList.remove('toast-show'); void toast.offsetWidth; toast.classList.add('toast-show');
@@ -444,13 +534,13 @@
         function copyDriveLink() {
             try {
                 if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(DRIVE_URL); showCuteToast("Link berhasil disalin!", "📋");
+                    navigator.clipboard.writeText(DRIVE_URL); showCuteToast("URL_COPIED_TO_CLIPBOARD", "📋");
                 } else {
                     let tempInput = document.createElement("input"); tempInput.value = DRIVE_URL;
                     document.body.appendChild(tempInput); tempInput.select(); document.execCommand("copy");
-                    document.body.removeChild(tempInput); showCuteToast("Link berhasil disalin!", "📋");
+                    document.body.removeChild(tempInput); showCuteToast("URL_COPIED_TO_CLIPBOARD", "📋");
                 }
-            } catch (err) { showCuteToast("Gagal menyalin link.", "⚠️"); }
+            } catch (err) { showCuteToast("COPY_FAILED", "⚠️"); }
         }
 
         canvas.addEventListener('click', () => { setActiveSticker(null); });
@@ -459,13 +549,13 @@
             const file = event.target.files[0];
             if(!file) return;
             const reader = new FileReader();
-            reader.onload = function(e) { createStickerElement(e.target.result); showCuteToast("Stiker custom diupload!", "📁"); }
+            reader.onload = function(e) { createStickerElement(e.target.result); showCuteToast("FILE_UPLOADED_SUCCESS", "📁"); }
             reader.readAsDataURL(file); event.target.value = ''; 
         }
 
         function createStickerElement(src) {
             const img = document.createElement('img');
-            img.src = src; img.className = 'absolute cursor-move select-none drop-shadow-md z-50'; img.style.width = '100px'; 
+            img.src = src; img.className = 'absolute cursor-move select-none drop-shadow-[4px_4px_0_#000000] z-50'; img.style.width = '100px'; 
             const area = document.getElementById('sticker-area');
             img.style.top = (area.offsetHeight / 2 - 50) + 'px'; img.style.left = (area.offsetWidth / 2 - 50) + 'px';
             img.onload = () => { area.appendChild(img); makeDraggable(img); setActiveSticker(img); };
@@ -530,7 +620,6 @@
             return canvas.toDataURL('image/png', 1.0);
         }
 
-        // FUNGSI DOWNLOAD PNG (Statis)
         function triggerDownloadHD() {
             if (sessionPhotos.length === 0) return;
             const link = document.createElement('a');
@@ -538,19 +627,17 @@
             link.href = getMergedExportCanvas(); 
             link.click();
             drawFinal(); 
-            showCuteToast("Yeay! Foto lebaranmu (PNG) berhasil didownload!", "💾");
+            showCuteToast("IMAGE_SAVED.PNG", "💾");
         }
 
-        // FUNGSI DOWNLOAD ANIMASI GIF
         function triggerDownloadGIF() {
             if (sessionPhotos.length === 0) return;
-            showCuteToast("Sedang merakit GIF... Sabar ya! ⏳", "🎞️");
+            showCuteToast("COMPILING_GIF... PLEASE_WAIT", "🎞️");
             
             let frames = [];
             let originalFrame = currentGifFrame;
             let originalLayout = currentLayout;
 
-            // Memaksa mode animasi GIF sementara untuk export jika sedang di mode strip/grid
             if (currentLayout !== 'gif') currentLayout = 'gif'; 
 
             for(let i=0; i<sessionPhotos.length; i++) {
@@ -558,41 +645,33 @@
                 frames.push(getMergedExportCanvas());
             }
 
-            // Kembalikan ke mode awal
-            currentLayout = originalLayout;
-            currentGifFrame = originalFrame;
-            drawFinal();
+            currentLayout = originalLayout; currentGifFrame = originalFrame; drawFinal();
 
             gifshot.createGIF({
-                images: frames,
-                interval: 0.6, // waktu jeda antar frame
-                gifWidth: 800,
-                gifHeight: 1000, 
-                numWorkers: 2
+                images: frames, interval: 0.6, gifWidth: 800, gifHeight: 1000, numWorkers: 2
             }, function(obj) {
                 if(!obj.error) {
                     let link = document.createElement('a');
                     link.download = `EID-ANIMATION-${userName}-${Date.now()}.gif`;
-                    link.href = obj.image;
-                    link.click();
-                    showCuteToast("Horee! Animasi GIF berhasil diunduh!", "🎉");
+                    link.href = obj.image; link.click();
+                    showCuteToast("ANIMATION_SAVED.GIF", "🎉");
                 } else {
-                    showCuteToast("Waduh, gagal bikin GIF.", "⚠️");
+                    showCuteToast("GIF_COMPILATION_ERROR", "⚠️");
                 }
             });
         }
 
         async function triggerSharePhoto() {
             if (sessionPhotos.length === 0) return;
-            if (!navigator.share) { showCuteToast("Yah, browser kamu belum support share. Download aja ya!", "🥲"); return; }
+            if (!navigator.share) { showCuteToast("SHARE_API_NOT_SUPPORTED", "🥲"); return; }
             try {
                 const blob = await (await fetch(getMergedExportCanvas())).blob();
                 const file = new File([blob], `EID-SNAP-${userName}.png`, { type: 'image/png' });
                 if (navigator.canShare && navigator.canShare({ files: [file] })) {
                     await navigator.share({ title: '✨ Eid Studio ✨', text: `Selamat Idul Adha! Lihat hasil photobooth aku nih! 🐐🌙`, files: [file] });
-                    showCuteToast("Yay! Berhasil dibagikan!", "🚀");
-                } else { showCuteToast("Browser ga support bagi gambar. Download aja ya!", "🥲"); }
-            } catch (err) { showCuteToast("Ada error pas mau share nih.", "⚠️"); } 
+                    showCuteToast("SHARE_SUCCESS", "🚀");
+                } else { showCuteToast("SHARE_FILE_NOT_SUPPORTED", "🥲"); }
+            } catch (err) { showCuteToast("SHARE_PROCESS_ABORTED", "⚠️"); } 
             finally { drawFinal(); }
         }
 
@@ -602,7 +681,7 @@
                 const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facingMode, aspectRatio: 1/1, width: 1080, height: 1080 }, audio: false });
                 video.srcObject = stream;
                 if(facingMode === 'user') video.classList.add('mirror'); else video.classList.remove('mirror');
-            } catch (e) { alert("Kamera tidak ditemukan."); }
+            } catch (e) { alert("CAMERA_NOT_DETECTED"); }
         }
 
         function switchCamera() { currentFacingMode = currentFacingMode === 'user' ? 'environment' : 'user'; initCamera(currentFacingMode); }
@@ -610,12 +689,7 @@
         function goToLayoutStep() {
             userName = document.getElementById('user-name').value.trim().toUpperCase() || "GUEST";
             document.getElementById('step-name').classList.add('hidden'); document.getElementById('step-layout').classList.remove('hidden');
-            // Coba trigger lagu lagi
-            if(!isMusicPlaying) {
-                bgMusic.play().then(()=> {
-                    isMusicPlaying=true; document.getElementById('music-icon').innerText = '🎵';
-                }).catch(e=>{});
-            }
+            if(!isMusicPlaying) { bgMusic.play().then(()=> { isMusicPlaying=true; document.getElementById('music-icon').innerText = '🎵'; }).catch(e=>{}); }
         }
 
         function backToNameStep() { document.getElementById('step-layout').classList.add('hidden'); document.getElementById('step-name').classList.remove('hidden'); }
@@ -633,6 +707,7 @@
             drawFinal();
         }
 
+        // Font Mapping & Selection
         function setFont(f) {
             currentFont = f;
             document.querySelectorAll('[data-font]').forEach(b => b.classList.remove('is-active'));
@@ -668,8 +743,6 @@
                     ctx.drawImage(video, startX, startY, size, size, 0, 0, 800, 800);
                     
                     tempGifSnaps.push(temp);
-                    
-                    // Jeda 0.6 detik antar jepretan burst (otomatis)
                     if(i < 3) await new Promise(r => setTimeout(r, 600));
                 }
                 drawFinal(true); toggleOverlay(true);
@@ -746,52 +819,47 @@
             ctx.fillStyle = bgColor;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            if (isGif) {
-                // LOGIKA RENDER POLAROID ANIMASI (GIF)
-                let imgToDraw = null;
-                let isTemp = false;
-
-                if (isPreview && tempGifSnaps.length > 0) {
-                    imgToDraw = tempGifSnaps[currentGifFrame % tempGifSnaps.length];
-                    isTemp = true;
-                } else if (sessionPhotos.length > 0) {
-                    imgToDraw = sessionPhotos[currentGifFrame % sessionPhotos.length];
+            // Brutalist Grid Pattern on Canvas Background (High Tech Theme)
+            ctx.fillStyle = (document.documentElement.classList.contains('dark')) ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)';
+            for (let i = 0; i < canvas.width; i += 20) {
+                for (let j = 0; j < canvas.height; j += 20) {
+                    ctx.fillRect(i, j, 1, 1);
                 }
+            }
+            
+            // Outline border for canvas
+            ctx.strokeStyle = '#000000'; ctx.lineWidth = 10; ctx.strokeRect(0,0, canvas.width, canvas.height);
+
+            if (isGif) {
+                let imgToDraw = null; let isTemp = false;
+                if (isPreview && tempGifSnaps.length > 0) { imgToDraw = tempGifSnaps[currentGifFrame % tempGifSnaps.length]; isTemp = true; } 
+                else if (sessionPhotos.length > 0) { imgToDraw = sessionPhotos[currentGifFrame % sessionPhotos.length]; }
 
                 if (imgToDraw) {
-                    ctx.save();
-                    if(!isTemp) ctx.filter = currentFilter;
+                    ctx.save(); if(!isTemp) ctx.filter = currentFilter;
                     ctx.drawImage(imgToDraw, 0, 0, 800, 800, 50, 50, 700, 700);
-                    if(isTemp) {
-                        ctx.strokeStyle = '#F59E0B'; ctx.lineWidth = 8; ctx.strokeRect(54, 54, 692, 692);
-                    }
+                    ctx.strokeStyle = '#000000'; ctx.lineWidth = 12; ctx.strokeRect(50, 50, 700, 700); // Brutalist photo frame
+                    if(isTemp) { ctx.strokeStyle = '#00FF66'; ctx.lineWidth = 8; ctx.strokeRect(54, 54, 692, 692); }
                     ctx.restore();
                 } else {
-                    ctx.fillStyle = 'rgba(0,0,0,0.05)'; ctx.fillRect(50, 50, 700, 700);
+                    ctx.fillStyle = '#000000'; ctx.fillRect(50, 50, 700, 700);
                 }
             } else {
-                // LOGIKA RENDER STRIP & GRID
                 const maxSlots = isStrip ? 3 : 4;
                 for(let i=0; i < maxSlots; i++) {
                     const x = isStrip ? 20 : (i % 2 === 0 ? 20 : 410);
                     const y = isStrip ? (20 + (i * 380)) : (i < 2 ? 20 : 410);
                     
-                    let imgToDraw = sessionPhotos[i];
-                    let isTemp = false;
-
-                    if(!imgToDraw && isPreview && i === sessionPhotos.length) {
-                        imgToDraw = lastTempSnap; isTemp = true;
-                    }
+                    let imgToDraw = sessionPhotos[i]; let isTemp = false;
+                    if(!imgToDraw && isPreview && i === sessionPhotos.length) { imgToDraw = lastTempSnap; isTemp = true; }
 
                     if(!imgToDraw) {
-                        ctx.fillStyle = 'rgba(0,0,0,0.05)'; ctx.fillRect(x, y, 360, 360);
+                        ctx.fillStyle = '#000000'; ctx.fillRect(x, y, 360, 360);
                     } else {
-                        ctx.save();
-                        if(!isTemp) ctx.filter = currentFilter;
+                        ctx.save(); if(!isTemp) ctx.filter = currentFilter;
                         ctx.drawImage(imgToDraw, 0, 0, 800, 800, x, y, 360, 360);
-                        if(isTemp) {
-                            ctx.strokeStyle = '#F59E0B'; ctx.lineWidth = 8; ctx.strokeRect(x+4, y+4, 352, 352);
-                        }
+                        ctx.strokeStyle = '#000000'; ctx.lineWidth = 10; ctx.strokeRect(x, y, 360, 360); // Brutalist photo frame
+                        if(isTemp) { ctx.strokeStyle = '#00FF66'; ctx.lineWidth = 8; ctx.strokeRect(x+4, y+4, 352, 352); }
                         ctx.restore();
                     }
                 }
@@ -799,38 +867,32 @@
 
             const r = parseInt(bgColor.slice(1,3), 16); const g = parseInt(bgColor.slice(3,5), 16); const b = parseInt(bgColor.slice(5,7), 16);
             const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-            const textColor = brightness > 128 ? '#000000' : '#ffffff';
+            const textColor = brightness > 128 ? '#000000' : '#FFFFFF';
 
-            ctx.font = `bold 28px "${currentFont}"`;
-            ctx.textAlign = 'center';
-            const txt = document.getElementById('custom-text').value.toUpperCase() || `EID MUBARAK x ${userName}`;
+            ctx.font = `bold 28px "${currentFont}"`; ctx.textAlign = 'center';
+            const txt = document.getElementById('custom-text').value.toUpperCase() || `EID STUDIO x ${userName}`;
 
+            // Draw text with brutalist drop shadow
+            ctx.fillStyle = textColor === '#000000' ? '#FFFFFF' : '#000000';
+            ctx.fillText(txt, canvas.width / 2 + 2, canvas.height - 33);
             ctx.fillStyle = textColor;
             ctx.fillText(txt, canvas.width / 2, canvas.height - 35);
         }
 
         async function processAndUpload() {
-            const btn = document.getElementById('sync-btn');
-            const status = document.getElementById('upload-status');
-            const box = document.getElementById('upload-box');
-            
-            btn.disabled = true; btn.innerText = "SEDANG MENGIRIM...";
-            box.classList.remove('hidden');
+            const btn = document.getElementById('sync-btn'); const status = document.getElementById('upload-status'); const box = document.getElementById('upload-box');
+            btn.disabled = true; btn.innerText = "UPLOADING_DATA..."; box.classList.remove('hidden');
             const sessionID = `${userName}-${Date.now()}`;
 
-            // Kirim RAW images
             for(let i=0; i<rawPhotos.length; i++) {
-                status.innerText = `SYNC PHOTO ${i+1}/${rawPhotos.length}...`;
+                status.innerText = `SYNC FILE ${i+1}/${rawPhotos.length}...`;
                 await fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ sessionID, base64: rawPhotos[i], fileName: `RAW-${i+1}.png` })});
             }
             
-            // Generate File Hasil Akhir
-            status.innerText = "GENERATING FINAL RESULT...";
+            status.innerText = "RENDERING_FINAL_OUTPUT...";
             
-            // Jika mode animasi yang dipilih, kita render dan upload GIF-nya!
             if (currentLayout === 'gif') {
-                let frames = [];
-                let originalFrame = currentGifFrame;
+                let frames = []; let originalFrame = currentGifFrame;
                 for(let i=0; i<sessionPhotos.length; i++) { currentGifFrame = i; frames.push(getMergedExportCanvas()); }
                 currentGifFrame = originalFrame; drawFinal();
 
@@ -850,11 +912,10 @@
             }
 
             function suksesUpload() {
-                status.innerText = "SESI BERHASIL DISIMPAN!";
+                status.innerText = "UPLOAD_COMPLETE_OK";
                 document.getElementById('qr-code').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(DRIVE_URL)}`;
-                btn.innerHTML = "<span class='text-lg sm:text-xl'>✅</span> Berhasil Disimpan";
-                drawFinal(); 
-                showCuteToast("Horee! Foto/GIF berhasil masuk cloud!", "☁️");
+                btn.innerHTML = "<span class='text-lg sm:text-xl'>✅</span> SUCCESS";
+                drawFinal(); showCuteToast("SYNC_COMPLETE", "☁️");
             }
         }
     </script>
